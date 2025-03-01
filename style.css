@@ -1,0 +1,325 @@
+:root {
+    --primary-color: #795548; /* Marrone elegante */
+    --secondary-color: #A1887F; /* Beige caldo */
+    --accent-color: #E0F2F1; /* Verde chiaro */
+    --light-bg: #F8F9FA;
+    --text-color: #222222; /* Grigio scuro */
+    --white: #F0F4F4;
+    --btn-hover-color: #5D4037;
+    --hero-gradient-start: rgba(240, 246, 246, 0.7);
+    --hero-gradient-end: rgba(224, 234, 234, 0.7);
+    --modern-font: 'Nunito Sans', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--modern-font);
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    line-height: 1.7;
+    background-image: url('img/sfondo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+header {
+    background: linear-gradient(135deg, var(--secondary-color) 0%, rgba(161, 136, 127, 0.9) 100%);
+    color: var(--white);
+    padding: 25px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.header-logo {
+    width: 90px;
+    height: auto;
+    border-radius: 50%;
+    border: 4px solid var(--accent-color);
+    transition: transform 0.3s ease;
+}
+
+.header-logo:hover {
+    transform: rotate(5deg);
+}
+
+header h1 {
+    font-size: 2em;
+    font-weight: 800;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+nav {
+    margin-top: 15px;
+}
+
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--white);
+    font-size: 1.8em;
+    cursor: pointer;
+    width: 30px;
+    height: 25px;
+}
+
+.hamburger .bar {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: var(--white);
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+.hamburger.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.hamburger.active .bar:nth-child(2) { opacity: 0; }
+.hamburger.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+.menu {
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 700;
+    padding: 10px 20px;
+    border-radius: 25px;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: rgba(224, 242, 241, 0.2);
+}
+
+.hero {
+    padding: 120px 20px;
+    background-image: url('img/hero-image.jpg');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--hero-gradient-start) 0%, var(--hero-gradient-end) 100%);
+    opacity: 0.8;
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.hero h2 {
+    font-size: 2.8em;
+    margin-bottom: 20px;
+    font-weight: 800;
+    color: var(--text-color);
+}
+
+.hero .accent {
+    color: var(--primary-color);
+}
+
+.hero .hero-description {
+    font-size: 1.2em;
+    margin-bottom: 40px;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+    padding: 60px 0;
+}
+
+.section {
+    background-color: rgba(240, 246, 246, 0.7);
+    padding: 50px;
+    margin-bottom: 40px;
+    border-radius: 18px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+    animation: fadeIn 0.8s ease forwards;
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+.section h2 {
+    color: var(--primary-color);
+    border-bottom: 5px solid var(--primary-color);
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+    font-size: 2.5em;
+}
+
+.section p {
+    font-size: 1.1em;
+    margin-bottom: 25px;
+}
+
+.section ul {
+    padding-left: 30px;
+    list-style-type: none;
+}
+
+.section li {
+    margin-bottom: 15px;
+    font-size: 1.1em;
+}
+
+.section li i {
+    margin-right: 12px;
+    color: var(--primary-color);
+}
+
+.section li.highlight {
+    background-color: var(--accent-color);
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.cta {
+    display: inline-block;
+    padding: 16px 32px;
+    background: var(--primary-color);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: 700;
+    transition: all 0.5s ease;
+    margin-top: 30px;
+}
+
+.cta.secondario {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    border: 3px solid var(--primary-color);
+}
+
+.cta:hover {
+    background-color: var(--btn-hover-color);
+    transform: scale(1.07);
+}
+
+.cta.secondario:hover {
+    background-color: var(--white);
+    color: var(--btn-hover-color);
+}
+
+.chi-sono .about-me-content {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.chi-sono .about-me-image {
+    max-width: 40%;
+    border-radius: 15px;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.testimonial {
+    background: var(--white);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 2px solid var(--secondary-color);
+    border-radius: 8px;
+}
+
+form button {
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background: var(--btn-hover-color);
+}
+
+footer {
+    background: var(--primary-color);
+    color: var(--white);
+    text-align: center;
+    padding: 20px;
+}
+
+.social-icons a {
+    color: var(--white);
+    margin: 0 10px;
+    font-size: 1.5em;
+}
+
+@media (max-width: 768px) {
+    .hamburger { display: block; }
+    .menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: var(--secondary-color);
+        position: absolute;
+        top: 100%;
+        left: 0;
+    }
+    .menu.active { display: flex; }
+    .hero { padding: 80px 15px; }
+    .hero h2 { font-size: 2em; }
+    .chi-sono .about-me-content { flex-direction: column; }
+    .chi-sono .about-me-image { max-width: 60%; }
+}
